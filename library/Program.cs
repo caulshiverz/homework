@@ -16,16 +16,17 @@ while (true)
             var title = Console.ReadLine();
             Console.WriteLine("Enter the author of the book:");
             var author = Console.ReadLine();
+            DateTime release = DateTime.Now; 
             try
             {
                 Console.WriteLine("Enter the release date of the book (YYYY-MM-DD):");
-                DateTime.TryParse(Console.ReadLine(), out var releaseDate);
+                release = DateTime.TryParse(Console.ReadLine(), out var releaseDate) ? releaseDate : throw new Exception();
             }
             catch (Exception e)
             {
                 Console.WriteLine("Invalid date format.");
             }
-            var newBook = new Book(title, author, releaseDate);
+            var newBook = new Book(title, author, release);
             AddBook(newBook);
             break;
 
@@ -49,6 +50,46 @@ while (true)
     }
 }
 
+void AddBook(Book book)
+{
+    library.Books.Add(book);
+    Console.WriteLine($"{book.Title} has been added to the library.");
+}
+
+void RemoveBook(string title)
+{
+    try
+    {
+        foreach (var book in library.Books)
+        {
+            if (book.Title == title)
+            {
+                library.Books.Remove(book);
+                Console.WriteLine($"{title} has been removed from the library.");
+                return;
+            }
+        }      
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"{title} not found in the library.");
+    }
+}
+
+void ListBooks()
+{
+    try
+    {
+        foreach (var book in library.Books)
+        {
+            Console.WriteLine($"Book: {book.Title}, Author: {book.Author}, Release Date: {book.ReleaseDate}");
+        }
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine("There are no books in the library.");
+    }
+}
 public class Book
 {
     private string _title;
@@ -62,53 +103,17 @@ public class Book
         _releaseDate = releaseDate;
     }
 
-    public string Title { get; set; }
-    public string Author { get; set; }
-    public DateTime ReleaseDate { get; set; }
+    public string Title => _title;
+    public string Author => _author;
+    public DateTime ReleaseDate => _releaseDate;
 }
 
 public class Library
 {
-    private List<Book> books;
+    public List<Book> Books { get; private set; }
 
     public Library()
     {
-        books = new List<Book>();
-    }
-
-    public List<Book> Books { get; set; }
-
-    public void AddBook(Book book)
-    {
-        books.Add(book);
-        Console.WriteLine($"{book.Title} has been added to the library.");
-    }
-
-    public void RemoveBook(string Title)
-    {
-        try
-        {
-            books.Remove(Book.Title);
-            Console.WriteLine($"{Title} has been removed from the library.");
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"{Title} not found in the library.");
-        }
-    }
-
-    public void ListBooks()
-    {
-        try
-        {
-            foreach (var book in books)
-            {
-                Console.WriteLine(book);
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("There are no books in the library.");
-        }
-    }
+        Books = new List<Book>();
+    } 
 }
