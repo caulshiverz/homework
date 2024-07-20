@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator", "calculator\calculator.csproj", "{7F37A29C-BB48-4356-BF32-35A210CE2424}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM", "ATM\ATM.csproj", "{73B0FB75-7132-4952-B0A3-7CBCACD2BC24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "library", "library\library.csproj", "{FC7F7E15-0089-4EE5-8C9E-E44467F5616C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F37A29C-BB48-4356-BF32-35A210CE2424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F37A29C-BB48-4356-BF32-35A210CE2424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F37A29C-BB48-4356-BF32-35A210CE2424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F37A29C-BB48-4356-BF32-35A210CE2424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73B0FB75-7132-4952-B0A3-7CBCACD2BC24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B0FB75-7132-4952-B0A3-7CBCACD2BC24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B0FB75-7132-4952-B0A3-7CBCACD2BC24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B0FB75-7132-4952-B0A3-7CBCACD2BC24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC7F7E15-0089-4EE5-8C9E-E44467F5616C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC7F7E15-0089-4EE5-8C9E-E44467F5616C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC7F7E15-0089-4EE5-8C9E-E44467F5616C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC7F7E15-0089-4EE5-8C9E-E44467F5616C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
