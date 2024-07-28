@@ -12,3 +12,4 @@ public static class Program
         manageSchool.ShowMenu();
     }
 }
+
